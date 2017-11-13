@@ -1,0 +1,68 @@
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:l="sap.ui.commons.layout" xmlns:core="sap.ui.core" xmlns:t="sap.ui.table">
+	<Dialog title="Add Workscope" class="sapUiPopupWithPadding" type="Message"> <!-- class customDialogHeader removed -->
+		<content>
+			<VBox>
+				<HBox class="sapUiTinyMarginTop sapUiTinyMarginBottom" width="100%">
+					<Label text="{i18n>add.ws.fragment.step1.label}" class="sapUiSmallMarginTop sapUiSmallMarginEnd"/>
+					<Select id="wrkTypeSelectMenu" width="15em" class="sapUiSmallMarginBegin sapUiMediumMarginRight"/>
+					<Select id="wrkScopeSelectMenu" width="15em" class="sapUiSmallMarginBegin" visible = "false"/>
+				</HBox>
+				<HBox class="sapUiTinyMarginTop sapUiTinyMarginBottom" width="100%">
+					<Label
+						text="{i18n>add.ws.fragment.step2.label}"
+						class="sapUiTinyMarginTop" />
+					<Label width = "184px" textAlign = "Right"
+						text="{i18n>add.ws.fragment.step2.labelTxt}"
+						class="sapUiTinyMarginTop" />	
+				</HBox>
+				<HBox> 
+					<ToolbarSpacer width="28px"></ToolbarSpacer> 
+					<HBox id="engChkBoxPrnt" class="sapUiMediumMarginBegin" >
+						<HBox id="engChkBox" />
+					</HBox>
+				</HBox>
+				
+				<!-- <HBox id="engChkBoxPrnt" class="sapUiMediumMarginBegin">
+					<HBox id="engChkBox"/>
+				</HBox> -->
+				<HBox class="sapUiTinyMarginTop sapUiTinyMarginBottom" width="100%">
+					<Label text="{i18n>add.ws.fragment.step3.label}" class="sapUiSmallMarginTop sapUiSmallMarginEnd"/>
+					<Label text="{i18n>add.ws.fragment.step3.labelTxt}" class="sapUiSmallMarginTop sapUiSmallMarginEnd" width = "122px" textAlign = "Right"/>
+					<Input  id="issueDesc" width="30rem" class="sapUiSmallMarginBegin" maxLength="255"/>
+					<ToolbarSpacer width="20px"></ToolbarSpacer>
+					<Button text="{i18n>add.button}" press="handleAddWrkScope"  width="5rem"/>
+					<!-- Button text="{i18n>delete.button}" press="handleDeleteToWorkScopeSelectionList" class="sapUiSmallMarginBegin" width="5rem"/-->
+				</HBox>
+				<t:Table id="idWSTable" noData="{i18n>table.no.data}" visibleRowCount="1" visibleRowCountMode="Interactive" selectionMode="None" class="sapUiTinyMarginTop">
+					<t:columns>
+						<t:Column resizable="false">
+							<Label text="{i18n>add.ws.table.col1}" />
+							<t:template>
+								<Text text="{addWSData>wrkDesc}"></Text>
+							</t:template>
+						</t:Column>
+						<t:Column resizable="false">
+							<Label text="{i18n>add.ws.table.col2}" />
+							<t:template>
+								<Text text="{addWSData>affEng}"></Text>
+							</t:template>
+						</t:Column>
+						<t:Column resizable="false">
+							<Label text="{i18n>add.ws.table.col3}" />
+							<t:template>
+								<Text text="{addWSData>issueDesc}" ></Text>
+							</t:template>
+						</t:Column>
+						<t:Column resizable="false" width = "4rem" hAlign="Center">
+                            <Label text="Delete" />
+                            <t:template>
+                                <core:Icon src="sap-icon://delete" size="1.5rem" decorative="true" useIconTooltip="true" noTabStop="false" tooltip="Delete" press="handleDeleteWorkScope" />
+                            </t:template>
+                        </t:Column>					
+					</t:columns>
+				</t:Table>
+			</VBox>
+		</content>
+	</Dialog>
+</core:FragmentDefinition>

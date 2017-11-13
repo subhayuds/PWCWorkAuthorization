@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:com="sap.ui.commons">
+	<!-- <ResponsivePopover title="Duncan" class="sapUiPopupWithPadding" placement="Bottom" >
+		<endButton>
+			<Button text="Confirm" press="handleConfirmShippingInfo" />
+		</endButton>
+		<content> -->
+				
+				
+			<HBox>
+				<VBox width = "35%">
+				<HBox class="sapUiTinyMarginTop">
+					<VBox width="35%"><Label text="Care of:" class="sapUiSmallMarginTop sapUiTinyMarginBegin pwcShipToTexBoxLabel"/></VBox>
+					<VBox width="65%"><Input maxLength = "30" type="text" class="sapUiTinyMarginTop"/></VBox>
+				</HBox>
+				<HBox width="100%" class="sapUiTinyMarginTop">
+					<VBox width="35%"><Label text="Address Line 1:" class="sapUiSmallMarginTop sapUiTinyMarginBegin pwcShipToTexBoxLabel"/></VBox>
+					<VBox width="65%"><Input maxLength = "60" type="text" class="sapUiTinyMarginTop"/></VBox>
+					
+				</HBox>
+				<HBox width="100%" class="sapUiTinyMarginTop">
+					<VBox width="35%"><Label text="Address Line 2:" height="2rem" class="sapUiSmallMarginTop sapUiTinyMarginBegin pwcShipToTexBoxLabel"/></VBox>
+					<VBox width="65%"><Input maxLength = "40" type="text" class="sapUiTinyMarginTop"/></VBox>
+				</HBox>
+				<HBox width="100%" class="sapUiTinyMarginTop">
+					<VBox width="35%"><Label text="Address Line 3:" height="2rem" class="sapUiSmallMarginTop sapUiTinyMarginBegin pwcShipToTexBoxLabel"/></VBox>
+					<VBox width="65%"><Input maxLength = "40" type="text" class="sapUiTinyMarginTop"/></VBox>
+				</HBox>
+				<HBox width="100%" class="sapUiTinyMarginTop">
+					<VBox width="31%"><Label text="Address Type:" class="sapUiSmallMarginTop sapUiTinyMarginBegin"/></VBox>
+					<VBox width="40%">
+						<HBox>
+						<!-- 	<com:CheckBox text="Primary" />
+							<com:CheckBox text="EndPoint" /> -->
+						 	<CheckBox text="Primary" />
+							<CheckBox text="End-Destination" />
+						</HBox>
+						
+					</VBox>
+				</HBox>	
+				
+				</VBox>
+				
+				<ToolbarSpacer width="40px"/>
+				
+				<VBox width = "28%">
+				<HBox width="100%" class="sapUiTinyMarginTop">
+					<VBox width="35%"><Label text="City:" class="sapUiSmallMarginTop sapUiTinyMarginBegin pwcShipToTexBoxLabel"/></VBox>
+					<VBox width="60%"><Input maxLength = "40" type="text" class="sapUiTinyMarginTop"/></VBox>
+				</HBox>
+				<HBox width="100%" class="sapUiTinyMarginTop">
+				<VBox width="35%"><Label text="Country:" class="sapUiSmallMarginTop sapUiTinyMarginBegin pwcShipToDropDownLabel"/></VBox>
+				<VBox width="60%">
+					<ComboBox items="{/countries}" change="handleCountryChange" class="sapUiTinyMarginTop"> 
+	  						<items> 
+				  				<core:Item key="{key}" text="{value}"/> 
+				  			</items> 
+			  		</ComboBox>  
+					</VBox> 
+				</HBox>
+				<HBox class="sapUiTinyMarginTop">
+					<VBox width="35%"><Label text="Region:" class="sapUiSmallMarginTop sapUiTinyMarginBegin pwcShipToDropDownLabel"/></VBox>
+					<VBox width="60%"><!-- <Input enabled="false" maxLength = "20" type="text" class="sapUiTinyMarginTop"/> -->
+					
+					<ComboBox  items="{/regions}" change="handleRegionChange" class="sapUiTinyMarginTop"> 
+	  						<items> 
+				  				<core:Item key="{key}" text="{value}"/> 
+				  			</items> 
+			  		</ComboBox>  
+					</VBox>
+				</HBox>
+				<HBox class="sapUiTinyMarginTop">
+					<VBox width="35%"><Label text="Zip Code:" class="sapUiSmallMarginTop sapUiTinyMarginBegin pwcShipToTexBoxLabel"/></VBox>
+					<VBox width="60%"><Input maxLength = "10" type="text" class="sapUiTinyMarginTop"/></VBox>
+				</HBox>
+<!-- 				<HBox width="100%" class="sapUiTinyMarginTop">
+					<VBox width="35%"><Label text="Address Type:" class="sapUiSmallMarginTop sapUiTinyMarginBegin"/></VBox>
+					<VBox width="40%">
+						<HBox>
+							<com:CheckBox text="Primary" />
+							<com:CheckBox text="EndPoint" />
+						 	<CheckBox text="Primary" />
+							<CheckBox text="EndPoint" />
+						</HBox>
+						
+					</VBox>
+				</HBox>	
+ -->				</VBox>
+				
+				<ToolbarSpacer width="40px"/>
+				
+				<VBox width = "32%">
+				<HBox width="100%" class="sapUiTinyMarginTop">
+					<VBox width="35%"><Label text="Ship Acc. No:" class="sapUiSmallMarginTop sapUiTinyMarginBegin pwcShipToTexBoxLabel"/></VBox>
+					<VBox width="60%"><Input maxLength = "20" type="text" class="sapUiTinyMarginTop"/></VBox>
+				</HBox>
+				<HBox width="100%" class="sapUiTinyMarginTop">
+					<VBox width="35%"><Label text="Carrier:" class="sapUiSmallMarginTop sapUiTinyMarginBegin pwcShipToDropDownLabel"/></VBox>
+					<VBox width="60%">
+					<Select width="100%" class="sapUiTinyMarginTop" />
+					</VBox>
+				</HBox>
+				<HBox width="100%" class="sapUiTinyMarginTop">
+					<VBox width="35%"><Label text="Required by:" class="sapUiSmallMarginTop sapUiTinyMarginBegin pwcShipToDateLabel"/></VBox>
+					<VBox width="60%">
+					<!-- <Input type="text" class="sapUiTinyMarginTop"/> -->
+					<DatePicker valueFormat = "dd-MM-yyyy" displayFormat = "dd-MMM-yyyy" class="sapUiTinyMarginTop" />
+					</VBox>
+				</HBox>
+				<HBox width="100%" class="sapUiTinyMarginTop">
+					<VBox width="35%"><Label text="Customer PO:" class="sapUiSmallMarginTop sapUiTinyMarginBegin pwcShipToTexBoxLabel"/></VBox>
+					<VBox width="60%"><Input maxLength = "20" type="text" class="sapUiTinyMarginTop"/></VBox>
+				</HBox>
+				<HBox width="100%" class="sapUiTinyMarginTop">
+					<VBox width="35%"><Label text="Notes:" class="sapUiSmallMarginTop sapUiTinyMarginBegin pwcShipToTexBoxLabel"/></VBox>
+					<VBox width="60%"><Input maxLength = "70" type="text" class="sapUiTinyMarginTop"/></VBox>
+				</HBox>
+				</VBox>
+			</HBox>	
+		<!-- </content>
+	</ResponsivePopover> -->
+</core:FragmentDefinition>

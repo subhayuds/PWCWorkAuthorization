@@ -1,0 +1,98 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.commons.layout" xmlns:core="sap.ui.core" xmlns:t="sap.ui.table">
+  	<Dialog title="Internal Comments" class="sapUiPopupWithPadding customDialogHeader" type="Message">
+  		<beginButton>
+			<Button text="Confirm" press="handleCommentsDialogConfirm"/>
+		</beginButton>
+  	
+  		<endButton>
+			<Button text="Close" press="handleCommentsDialogClose"/>
+		</endButton>
+    	<content>
+    	<l:MatrixLayout widths="30%,70%">
+   <!--  	 <l:MatrixLayoutRow>
+    		<l:MatrixLayoutCell>
+    		 <Title text="Issue Text" level= "H2"  />
+    		</l:MatrixLayoutCell>
+    		<l:MatrixLayoutCell>
+    		 <TextArea cols="80" rows = "4" id="issueTxtArea"/>
+    		</l:MatrixLayoutCell>
+    	</l:MatrixLayoutRow> -->
+    	<l:MatrixLayoutRow>
+    		<l:MatrixLayoutCell>
+    			<Title text="Comments" level= "H2"  />
+    		</l:MatrixLayoutCell>
+    		<l:MatrixLayoutCell>
+    			<TextArea cols="80" rows = "4" id="commentTxtArea" maxLength = "1310" />
+    		</l:MatrixLayoutCell>
+    	</l:MatrixLayoutRow>
+    	<l:MatrixLayoutRow>
+    		<l:MatrixLayoutCell>
+    		 <Title text="Contract Text" level= "H2"  />
+    		</l:MatrixLayoutCell>
+    		<l:MatrixLayoutCell>
+    		 <TextArea editable="false" cols="80" rows = "4" id="contractTxtArea"/>
+    		</l:MatrixLayoutCell>
+    	</l:MatrixLayoutRow>
+    	<l:MatrixLayoutRow>
+    		<l:MatrixLayoutCell>
+    		<Title text="Revisions" level= "H2"  />
+    		</l:MatrixLayoutCell>
+    		<l:MatrixLayoutCell>
+    	<!-- 	<Table inset="false" mode="none"
+					items="{path:'commentsModel>/items'}">
+					<columns>
+						<Column width="20%">
+							<Label text="Rev No"/>
+						</Column>
+						<Column width="50%">
+							<Label text="Created By"/>
+						</Column>
+						<Column width="30%">
+							<Label text="Created Date"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem>
+							<cells>
+								<Text text="{commentsModel>revNo}"/>
+								<Text text="{commentsModel>createdBy}"/>
+								<Text text="{commentsModel>createdDate}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table> -->
+				<t:Table id="revisionTable" selectionMode="None" width="100%" rows="{revisionTbl>/results}" > 
+						<t:columns> 
+							<t:Column resizable="false" width="6em" hAlign="Center">
+								<Label text="Rev No" />
+								<t:template>
+									<Text text="{revisionTbl>ResvNumber}"></Text>
+								</t:template>
+							</t:Column>
+							<t:Column>
+								<Label text="Created By" />
+								<t:template>
+									<Text text="{revisionTbl>CreatedBy}" />
+								</t:template>
+							</t:Column>
+							<t:Column>
+								<Label text="Created Date" />
+								<t:template>
+									<Text text="{path: 'revisionTbl>CreatedDate', formatter: 'pwc.app.util.WAFormatter._convDate'}" />
+								</t:template>
+							</t:Column>
+							<t:Column>
+								<Label text="Created Time" />
+								<t:template>
+									<Text text="{path: 'revisionTbl>CreatedTime', formatter: 'pwc.app.util.WAFormatter._convTime'}" />
+								</t:template>
+							</t:Column>
+						</t:columns> 
+					</t:Table> 
+				
+    		</l:MatrixLayoutCell>
+    	</l:MatrixLayoutRow>
+    	</l:MatrixLayout>
+    	</content>
+	</Dialog>
+</core:FragmentDefinition>

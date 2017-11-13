@@ -1,0 +1,17 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+	<Dialog title="Enter Company Name" id="idShippingAddOthersDialog"  class="sapUiPopupWithPadding" type="Message"> <!-- class customDialogHeader removed -->
+		<HBox class="sapUiTinyMarginTop">
+			<VBox width="35%"><Label text="Company Name:" class="sapUiSmallMarginTop sapUiTinyMarginBegin pwcShipToTexBoxLabel"/></VBox>
+			<VBox width="65%"><Input id="addOthersShiptTo" maxLength = "30" type="text" class="sapUiTinyMarginTop"/></VBox>
+		</HBox>
+	
+		<buttons>
+		<Button text = "Add" press = "handleAddOthersShippingInfo" />
+		<Button text="Cancel" press="handleCancelOthersShippingInfo" /> 
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

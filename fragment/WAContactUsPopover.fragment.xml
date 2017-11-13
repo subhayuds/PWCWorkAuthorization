@@ -1,0 +1,30 @@
+<core:FragmentDefinition
+	xmlns="sap.m" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+	<ResponsivePopover title="ESP Contact" class="sapUiPopupWithPadding" placement="Bottom" >
+		<endButton>
+			<Button text="Confirm" press="handleConfirmContactUs" />
+		</endButton>
+		<content>
+			<VBox width = "350px">
+				<HBox class="sapUiTinyMarginBottom">
+					<core:Icon src="sap-icon://customer" size="1.5rem" color="#2A2727" width="2rem" height="2rem"  tooltip="Contact Person" class="sapUiTinyMarginEnd"/>
+					<Input maxLength="30" width = "300px" type = "text" value="{/ContactName}"/>
+				</HBox>
+				<HBox class="sapUiTinyMarginTop sapUiTinyMarginBottom">
+					<core:Icon src="sap-icon://email" size="1.5rem" color="#2A2727" width="2rem" height="2rem" tooltip="Contact Person" class="sapUiTinyMarginEnd"/>
+					<Input maxLength="40" width = "300px" type = "email" value="{/EmailId}"/>
+				</HBox>
+				<HBox class="sapUiTinyMarginTop">
+					<core:Icon src="sap-icon://phone" size="1.5rem" color="#2A2727" width="2rem" height="2rem"  tooltip="Contact Person" class="sapUiTinyMarginEnd"/>
+					<Input maxLength="16" width = "300px" type = "tel" value="{/Telf1}"/>
+				</HBox>
+				<HBox class="sapUiTinyMarginTop">
+					<core:Icon src="sap-icon://iphone" size="1.5rem" color="#2A2727" width="2rem" height="2rem" tooltip="Contact Person" class="sapUiTinyMarginEnd"/>
+					<Input maxLength="16" width = "300px" type = "tel" value="{/Telf2}"/>
+				</HBox>
+			</VBox>
+		</content>
+	</ResponsivePopover>
+</core:FragmentDefinition>

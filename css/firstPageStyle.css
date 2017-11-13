@@ -1,0 +1,16 @@
+.footerFont {
+	color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.headerLabelRight {
+	font-size : 20px !important;
+	color: white;
+}
+#btnAddWS1-inner, #btnRemoveWS1-inner, #btnSave1-inner, #btnApprove1-inner, #btnReject1-inner, #btnSubmitActuals-inner, #idFooterToolBar-overflowButton-inner  {
+    background-color : #2A2727;
+    border-color : #2A2727;
+    color : #FFFFFF;
+    border-radius : 5px;
+}

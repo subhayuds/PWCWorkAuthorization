@@ -1,0 +1,21 @@
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:l="sap.ui.commons.layout" xmlns:core="sap.ui.core" xmlns:tbl="sap.ui.table">
+	<Dialog title="Remove Workscope" class="sapUiPopupWithPadding"
+		type="Message"> <!-- class customDialogHeader removed -->
+		<beginButton>
+			<Button text="Confirm" press="handleSelectWS" />
+		</beginButton>
+		<endButton>
+			<Button text="Cancel" press="handleCancelWSSearch" />
+		</endButton>
+		<content>
+			<VBox>
+<!-- 				<Label text="Note: Single Workscope associated with an Engine cannot be removed." labelDesign="Bold" class="sapUiTinyMarginTop sapUiSmallMarginBottom"/> -->
+				<tbl:Table id="tblRemoveWorkscope">
+
+				</tbl:Table>
+				
+			</VBox>
+		</content>
+	</Dialog>
+</core:FragmentDefinition>

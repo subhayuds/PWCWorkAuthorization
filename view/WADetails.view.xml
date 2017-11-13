@@ -1,0 +1,255 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:com="sap.ui.commons" xmlns="sap.m" xmlns:t="sap.ui.table" controllerName="pwc.app.controller.WADetails" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page showHeader="true" showFooter="true">
+		<customHeader>
+			<Toolbar id="idDetailsHeaderToolBar" width="100%" active="false" enabled="true">
+				<!-- HeaderContainer id="idDetailsContainer" visible="true"	scrollStep="200" scrollTime="500" showDividers="false" backgroundDesign="Transparent"-->
+				<!-- <HBox width="100%" alignItems="Center"> -->
+					
+					<VBox width="3em" alignItems="Center">
+					<HBox>
+						<core:Icon src="sap-icon://arrow-left" size="2rem" decorative="true" useIconTooltip="true" alt="Back" noTabStop="false" tooltip="Go back to Search screen" press="handleBackToSearchPress" /> <!-- hoverColor="#167823" activeColor = "#981200" backgroundColor = "#781290" hoverBackgroundColor = "#A2A2F5" activeBackgroundColor = "#F2F690" -->
+					</HBox>
+					</VBox>
+					
+					<VBox width="12.6em">
+						<!-- <Label id="waNo" text="WA{waTopAndHdrModel>/WoNumber} ({waTopAndHdrModel>/Status})" design="Bold" textAlign="Begin" textDirection="Inherit"/> -->
+						<Label id="waNo" text="WA{waTopAndHdrModel>/WoNumber}" design="Bold" textAlign="Begin" textDirection="Inherit"/>
+						<HBox>
+							<Label text="CRM No: " design="Standard" textAlign="Begin" textDirection="Inherit"/>
+							<Label text="{waTopAndHdrModel>/CrmDoc}" class="sapUiTinyMarginBegin" wrapping="true" design="Bold" textAlign="Begin" textDirection="Inherit"/>
+						</HBox>
+					</VBox>
+					<VBox width="22em">
+						<HBox>
+							<Label text="Requester: " design="Standard" textAlign="Begin" textDirection="Inherit" width="5em"/>
+							<Label text="{waTopAndHdrModel>/Requester}" design="Bold" class="sapUiTinyMarginBegin" wrapping="true" textAlign="Begin" textDirection="Inherit" width="20em"/>
+						</HBox>
+						<HBox>
+							<Label text="Customer: " design="Standard" textAlign="Begin" textDirection="Inherit" width="5em"/>
+ 							<Label text="{waTopAndHdrModel>/Customer}" design="Bold" class="sapUiTinyMarginBegin"  wrapping="true" textAlign="Begin" textDirection="Inherit" width="20em"/> 
+						</HBox>
+					</VBox>
+					<VBox width="16em">
+						<HBox>
+							<Label text="Created by: " design="Standard" textAlign="Begin" textDirection="Inherit" width="6.1em"/>
+							<Label text="{waTopAndHdrModel>/CreatedByName}" design="Bold" class="sapUiTinyMarginBegin" wrapping="true" textAlign="Begin" textDirection="Inherit" width="11em"/>
+						</HBox>
+						<HBox>
+							<Label text="Created date: " design="Standard" textAlign="Begin" textDirection="Inherit" width="6.1em"/>
+							<Label text="{path: 'waTopAndHdrModel>/Erdat', formatter: 'pwc.app.util.WAFormatter._convDate'}" design="Bold" class="sapUiTinyMarginBegin" wrapping="true" textAlign="Begin" textDirection="Inherit"/>
+							
+						</HBox>
+					</VBox>
+					<VBox width="5em">
+						<VBox>
+							<HBox height="1.5em">
+								<com:CheckBox id="aogID" text="AOG" checked="{waTopAndHdrModel>/Aog}"/>
+							</HBox>
+							<HBox >
+								<Label text="Rev: " design="Standard" textAlign="Begin" textDirection="Inherit" width="2.1em"/>
+								<Label text="{= ${waTopAndHdrModel>/RevisionNum} > 0 ? ${waTopAndHdrModel>/RevisionNum} : ''}" design="Bold" textAlign="Begin" textDirection="Inherit" width="4em"/> 
+							</HBox>
+						</VBox>
+					</VBox>
+					<VBox width="3em" alignItems="Center">
+						<HBox>
+							<core:Icon id = "shippingIcon" src="sap-icon://shipping-status" size="1.5rem" decorative="true" useIconTooltip="true" alt="Shipping Information" noTabStop="false" tooltip="Shipping Information" press="handleShippingInfoPopoverPress"/>
+						</HBox>
+					</VBox>
+					<VBox width="3em" alignItems="Center">
+						<HBox>
+							<core:Icon src="sap-icon://customer-and-contacts" size="1.5rem" decorative="true" useIconTooltip="true" alt="Contact Us" noTabStop="false" tooltip="Contact Us" press="handleContactUsPopoverPress"/>
+						</HBox>
+					</VBox>
+					<VBox width="3em" alignItems="Center">
+						<HBox>
+							<core:Icon src="sap-icon://comment" size="1.5rem" decorative="true" useIconTooltip="true" alt="Comments" noTabStop="false" tooltip="Comments" press="handleCommentsPopoverPress"/>
+						</HBox>
+					</VBox>
+					<VBox width="3em" alignItems="Center">
+						<HBox>
+							<core:Icon src="sap-icon://print" size="1.5rem" decorative="true" useIconTooltip="true" alt="Print" noTabStop="false" tooltip="Print" press="handlePrint" visible="{= ${waTopAndHdrModel>/ViewOnly} === 'X' ? false : true}"/>
+						</HBox>
+					</VBox>
+				<!-- </HBox> -->
+				<!-- /HeaderContainer-->
+			</Toolbar>
+		</customHeader>
+		
+		<content>
+			<Panel id="hdrDtlPnl" width="100%" expandable="true" expanded="true" expandAnimation="true" backgroundDesign="Translucent" class="pwcUiSmallMarginTop">
+				<headerToolbar>
+					<Toolbar height="3rem">
+						<Title text="Header Details" tooltip="Header Details"/>
+					</Toolbar>
+				</headerToolbar>
+				<content>
+					<HBox width="100%" class="pwcHeaderMPanelContent">
+						<VBox id="headerCell1VBox">
+							<HBox width="26em"> 
+								<Label text="ESP No: " design="Standard" textAlign="Begin" textDirection="Inherit" width="10em"/>
+								<Label text="{waTopAndHdrModel>/CustomerPo}" design="Bold" textAlign="Begin" textDirection="Inherit" width="10em"/>
+								<!-- <core:Icon src="sap-icon://search" size="1rem" decorative="true" useIconTooltip="true" alt="ESP Search" noTabStop="false" tooltip="ESP Number Search" press="espNoSearch"/> -->
+							</HBox>
+							<HBox width="26em"> 
+								<Label text="Plan Type: " design="Standard" textAlign="Begin" textDirection="Inherit" width="10em"/>
+								<Label text="{waTopAndHdrModel>/EspPlantype}" design="Bold" textAlign="Begin" textDirection="Inherit"/>
+							</HBox>
+							<HBox width="26em"> 
+								<Label text="1st Run Warranty: " design="Standard" textAlign="Begin" textDirection="Inherit" width="10em"/>
+								<Label text="{waTopAndHdrModel>/FirstRunwr}" design="Bold" textAlign="Begin" textDirection="Inherit"/>
+							</HBox>
+							<HBox width="26em"> 
+								<Label text="Status: " design="Standard" textAlign="Begin" textDirection="Inherit" width="10em"/>
+								<Label text="{waTopAndHdrModel>/AcountStatus}" design="Bold" textAlign="Begin" textDirection="Inherit" width="10em"/>
+								<Image src="{waTopAndHdrModel>/ASImg}" width="1em"/>
+								<!-- <core:Icon src="sap-icon://message-warning" size="01rem" activeBackgroundColor="yellow" decorative="true" useIconTooltip="true" alt="Status Notification" noTabStop="false" tooltip="Status Notification" press="statusNotification"/> -->
+							</HBox>
+							<HBox width="26em"> 
+								<Label text="Deferral Status: " design="Standard" textAlign="Begin" textDirection="Inherit" width="10em"/>
+								<Label text="{waTopAndHdrModel>/DeferalSdescr}" design="Bold" textAlign="Begin" textDirection="Inherit" width="10em"/>
+								<Image src="{waTopAndHdrModel>/DSImg}" width="1em"/>
+								<!-- <core:Icon src="mime/warning-button.png" size="1rem" hoverBackgroundColor="yellow" decorative="true" useIconTooltip="true" alt="Deferred Status Notification" noTabStop="false" tooltip="Deferred Status Notification" press="deferalStatusNotification"/> -->
+							</HBox>
+							<HBox width="26em"> 
+								<Label text="Ref WA: " design="Standard" textAlign="Begin" textDirection="Inherit" width="10em"/>
+								<com:TextField id="refWAID" maxLength="12" value="{waTopAndHdrModel>/RefWoNumber}" change="handleRefWoNumber" width="10em" class="sapUiSmallMarginBottom pwdTransparentInputBox"/> 
+							</HBox>
+						</VBox>
+						<ToolbarSpacer width="1px"/>
+						<VBox id="headerCell2VBox">
+							<HBox width="26em"> 
+								<Label text="Tail No: " design="Standard" textAlign="Begin" textDirection="Inherit" width="10em"/>
+								<Label text="{waTopAndHdrModel>/TailNumber}" design="Bold" textAlign="Begin" textDirection="Inherit" width="10em"/>
+							</HBox>
+							<HBox width="26em"> 
+								<Label text="A/C Model: " design="Standard" textAlign="Begin" textDirection="Inherit" width="10em"/>
+								<Label text="{waTopAndHdrModel>/AcModelText}" design="Bold" textAlign="Begin" textDirection="Inherit" width="25em"/>
+							</HBox>
+							<HBox width="26em"> 
+								<Label text="A/C Serial No: " design="Standard" textAlign="Begin" textDirection="Inherit" width="10em"/>
+								<Label text="{waTopAndHdrModel>/SerialNumber}" design="Bold" textAlign="Begin" textDirection="Inherit" width="10em"/>
+							</HBox>
+							<HBox width="26em"> 
+								<Label text="Engine Model: " design="Standard" textAlign="Begin" textDirection="Inherit" width="10em"/>
+								<Label text="{waTopAndHdrModel>/EngModel}" design="Bold" textAlign="Begin" textDirection="Inherit" width="10em"/>
+							</HBox>
+							<HBox width="26em"> 
+								<Label text="Event Date: " design="Standard" textAlign="Begin" textDirection="Inherit" width="10em"/>
+								<Label text="{path: 'waTopAndHdrModel>/EventDate', formatter: 'pwc.app.util.WAFormatter._convDate'}" design="Bold" textAlign="Begin" textDirection="Inherit" width="10em"/>
+								
+							</HBox>
+							<HBox width="26em"> 
+								<Label text="Last TTSN Date: " design="Standard" textAlign="Begin" textDirection="Inherit" width="10em"/>
+							<!-- 	<Label text="{path: 'waTopAndHdrModel>/LastReporttsn', formatter: 'pwc.app.util.WAFormatter._convDate'}"  design="Bold" textAlign="Begin" textDirection="Inherit" width="10em"/>  -->
+								<Label text="{waTopAndHdrModel>/LastReporttsn}"  design="Bold" textAlign="Begin" textDirection="Inherit" width="10em"/> 
+								
+							</HBox>
+						</VBox>
+						<ToolbarSpacer width="1px"/>
+					<!-- 	<Table id="ttsnID" width="100%" items="{path:'ttsn>/results'}">
+							<columns>
+								<Column><Text text=""/></Column>
+								<Column><Text text="Reported TTSN"/></Column>
+								<Column><Text text="Actual TTSN"/></Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{ttsn>EnSlNumber}" />
+										<Text text="{ttsn>LastReTtsn}" />
+										<Text text="{ttsn>EventReTtsn}" />
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table> -->
+						<t:Table id="ttsnID" width = "21.2rem" selectionMode="None" rows="{ttsn>/results}" noData="{i18n>table.no.data}" > 
+							<t:columns>
+								<t:Column resizable="false" width="6rem"> 
+									<Label text="Engine S/N" />
+									<t:template>
+										<Text text="{ttsn>EnSlNumber}"></Text>
+									</t:template>
+								</t:Column>
+								<t:Column resizable="false" width="8rem">
+									<Label text="Reported TTSN" />
+									<t:template>
+										<Text text="{ttsn>LastReTtsn}" maxLength="7"></Text>
+									</t:template>
+								</t:Column>
+								<t:Column resizable="false" width="7rem">
+									<Label text="Actual TTSN" />
+									<t:template>
+ 											<com:TextField value="{ttsn>EventReTtsn}" class="pwcTextFieldFont" change = "floatingvalidation" maxLength="7"/>
+									</t:template>
+								</t:Column>
+							</t:columns>
+					</t:Table>
+					</HBox>
+					<com:HorizontalDivider/>
+					<t:Table id="companyTblID" selectionMode="None" width="100%" rows="{compDtlsTbl>/results}" noData="{i18n>table.no.data}"> 
+						<t:columns> 
+							<t:Column>
+								<Label text="Company Name" />
+								<t:template>
+									<Text text="{compDtlsTbl>CompName}" ></Text>
+								</t:template>
+							</t:Column>
+							<t:Column>
+								<Label text="Contact Name" />
+								<t:template>
+									<com:TextField value="{compDtlsTbl>ContName}" maxLength="35"/>
+								</t:template>
+							</t:Column>
+							<t:Column>
+								<Label text="Phone No" />
+								<t:template>
+									<com:TextField value="{compDtlsTbl>Phone}" maxLength="16"/>
+								</t:template>
+							</t:Column>
+							<t:Column>
+								<Label text="Email" />
+								<t:template>
+									<com:TextField value="{compDtlsTbl>Email}" maxLength="50"/>
+								</t:template>
+							</t:Column>
+						</t:columns> 
+					</t:Table> 
+				</content>
+			</Panel>
+			
+			<IconTabBar id="idIconTabBar" select="handleTabs"/>
+		</content>
+		
+		<footer>
+			<OverflowToolbar>
+				<Button id="btnAddWS" text="Add Workscope" type="Default" press="handleAddWS">
+					<layoutData>
+						<OverflowToolbarLayoutData  moveToOverflow="true" stayInOverflow="false" priority="High" closeOverflowOnInteraction="true"/>
+					</layoutData>
+				</Button>
+				<Button id="btnRemoveWS" text="Remove Workscope" type="Default" press="handleRemoveWS">
+					<layoutData>
+						<OverflowToolbarLayoutData  moveToOverflow="true" stayInOverflow="false" priority="High" closeOverflowOnInteraction="true"/>
+					</layoutData>
+				</Button>
+				<ToolbarSpacer/>
+				<Button id="btnSave" text="Save" type="Default" press="handleSaveWorkAuthorization">
+					<layoutData>
+						<OverflowToolbarLayoutData  moveToOverflow="true" stayInOverflow="false" priority="High" closeOverflowOnInteraction="true"/>
+					</layoutData>
+				</Button>
+				<Button id="btnApprove" text="Approve" type="Accept" press="handleApproveWS">
+					<layoutData>
+						<OverflowToolbarLayoutData  moveToOverflow="true" stayInOverflow="false" priority="High" closeOverflowOnInteraction="true"/>
+					</layoutData>
+				</Button>
+				<Button id="btnReject" text="Decline" type="Reject" press="handleRejectWS">
+					<layoutData>
+						<OverflowToolbarLayoutData  moveToOverflow="true" stayInOverflow="false" priority="High" closeOverflowOnInteraction="true"/>
+					</layoutData>
+				</Button>
+			</OverflowToolbar>
+		</footer>
+	</Page>
+</core:View>

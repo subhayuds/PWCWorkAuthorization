@@ -1,0 +1,19 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<ResponsivePopover
+		title="Comments - Oper #{/operno}"
+		class="sapUiPopupWithPadding"
+		showHeader="true"
+		placement="Left" >
+		<beginButton>
+			<Button text="Confirm" press="handleCommentsForTableConfirmButton" />
+		</beginButton>
+		<endButton>
+			<Button text="Cancel" press="handleCommentsForTableCancelButton" />
+		</endButton>
+		<content>
+			<TextArea value="{/Text}" cols="90" rows = "20" id="commentTextAreaTable" maxLength = "1333" />
+		</content>
+	</ResponsivePopover>
+</core:FragmentDefinition>

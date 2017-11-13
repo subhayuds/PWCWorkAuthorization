@@ -1,0 +1,165 @@
+{
+	"_version": "1.1.0",
+	"start_url": "index.html",
+	"sap.app": {
+		"_version": "1.1.0",
+		"id": "pwc.app",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.1.0"
+		},
+		"title": "{{appTitle}}",
+		"tags": {
+			"keywords": [
+				"{{PWC}}",
+				"{{Work}}",
+				"{{Authorization}}"
+			]
+		}
+	},
+	"sap.ui": {
+		"_version": "1.1.0",
+		"technology": "UI5",
+		"icons": {
+			"icon": "sap-icon://Fiori2/F0394",
+			"favIcon": "./resources/sap/ca/ui/themes/base/img/favicon/My_Leave_Requests.ico",
+			"phone": "./resources/sap/ca/ui/themes/base/img/launchicon/My_Leave_Requests/57_iPhone_Desktop_Launch.png",
+			"phone@2": "./resources/sap/ca/ui/themes/base/img/launchicon/My_Leave_Requests/114_iPhone-Retina_Web_Clip.png",
+			"tablet": "./resources/sap/ca/ui/themes/base/img/launchicon/My_Leave_Requests/72_iPad_Desktop_Launch.png",
+			"tablet@2": "./resources/sap/ca/ui/themes/base/img/launchicon/My_Leave_Requests/144_iPad_Retina_Web_Clip.png"
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_bluecrystal"
+		]
+	},
+	"sap.ui5": {
+		"_version": "1.1.0",
+		"resources": {
+			"js": [
+				{
+					"uri": "js/"
+				}
+			],
+			"css": [
+				{
+					"uri": "css/globalStyle.css",
+					"id": "globalStyle"
+				}
+			]
+		},
+		"dependencies": {
+			"minUI5Version": "1.30",
+			"libs": {
+				"sap.m": {
+					"minVersion": "1.30"
+				},
+				"sap.me": {
+					"minVersion": "1.30"
+				}
+			},
+			"components": {
+				"pwc.app": {
+					"minVersion": "1.2.0"
+				}
+			}
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "pwc.app.i18n.i18n"
+				}
+			}
+		},
+		"rootView": {
+			"viewName": "pwc.app.view.App",
+			"type": "XML"
+		},
+		"handleValidation": true,
+		"config": {},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewPath": "pwc.app.view",
+				"controlId": "idApp",
+				"controlAggregation": "pages",
+				"transition": "slide",
+				"clearTarget": true,
+				"bypassed": {
+					"target": "notFound"
+				}
+			},
+			"routes": [
+				{
+					"name": "waHome",
+					"pattern": "home",
+					"target": "search"
+				},
+				{
+					"name": "waDetails",
+					"pattern": "waDetail/{workAuthNo}",
+					"target": "waDetails"
+				},
+				{
+					"name": "waDetailsForward",
+					"pattern": "waDetail",
+					"target": "waDetails"
+				}
+			],
+			"targets": {
+				"search": {
+					"viewPath": "pwc.app.view",
+					"viewName": "FullScreenSearch",
+					"viewId": "FullScreenSearch",
+					"viewType": "XML",
+					"viewLevel": 0,
+					"controlId": "idApp",
+					"controlAggregation": "pages"
+				},
+				"waDetails": {
+					"viewPath": "pwc.app.view",
+					"viewName": "WADetails",
+					"viewId": "WADetails",
+					"viewType": "XML",
+					"viewLevel": 0,
+					"controlId": "idApp",
+					"controlAggregation": "pages"
+				},
+				"notFound": {
+					"viewPath": "pwc.app.view",
+					"viewName": "NotFound",
+					"viewId": "NotFound",
+					"transition": "show",
+					"viewType": "XML",
+					"viewLevel": 0,
+					"controlId": "idApp",
+					"controlAggregation": "pages"
+				}
+			}
+		},
+		"extends": {
+			"component": "<extendedComponentId>",
+			"minVersion": "<minComp1Version>",
+			"extensions": {}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		}
+	},
+	"sap.platform.abap": {
+		"_version": "1.1.0",
+		"uri": ""
+	},
+	"sap.platform.hcp": {
+		"_version": "1.1.0",
+		"uri": ""
+	}
+}

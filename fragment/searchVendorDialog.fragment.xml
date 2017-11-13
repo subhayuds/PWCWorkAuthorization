@@ -1,0 +1,57 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.commons.layout" xmlns:core="sap.ui.core">
+  	<Dialog title="Search Vendor" class="sapUiPopupWithPadding" type="Message" contentHeight = "300px"><!-- class customDialogHeader removed -->
+  		<beginButton>
+			<Button text="Select" press="handleSelectVendor"/>
+		</beginButton>
+  		<endButton>
+			<Button text="Cancel" press="handleCancelVendorSearch"/>
+		</endButton>
+    	<content>
+    		<VBox>
+    			
+    			<HBox>
+    				<Label id = "OprtnNumLbl" text="Operations" visible = "false" class="sapUiSmallMarginTop sapUiTinyMarginTop sapUiTinyMarginBegin" />
+    				<Label id = "SelOprtnNums" text="" visible = "false" class="sapUiSmallMarginTop sapUiTinyMarginTop sapUiTinyMarginBegin" />
+    			</HBox>
+    			
+    			
+	      		<HBox>
+	      			<Label text="Vendor Name:"  class="sapUiSmallMarginTop sapUiTinyMarginTop sapUiTinyMarginBegin" />
+	      			<Input id = "vendorNameSearch" width="150px" fieldWidth="60%" class="sapUiTinyMarginTop sapUiSmallMarginBottom sapUiTinyMarginBegin" submit="searchVendors"/>
+	      			<Label text="Vendor City:" class="sapUiSmallMarginTop" />
+	      			<Input id = "vendorCitySearch" width="150px" fieldWidth="60%" class="sapUiTinyMarginTop sapUiSmallMarginBottom sapUiTinyMarginBegin sapUiTinyMarginEnd" submit="searchVendors"/>
+	      			<Button text="Search" press="searchVendors" class="sapUiTinyMarginBegin" />
+	      		</HBox>
+	      		<Table growing="true" id="idSearchVendorsTable" inset="false" mode="SingleSelectLeft" items="{/results}">
+					<headerToolbar>
+						<Toolbar>
+							<Title text="Vendors" level="H2"/>
+						</Toolbar>
+					</headerToolbar>
+					<columns>
+						<Column width="1rem"></Column>
+						<Column width="12em">
+							<Label text="Vendor Code"/>
+						</Column>
+						<Column>
+							<Label text="Vendor Name"/>
+						</Column>
+						<Column>
+							<Label text="Vendor City"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem>
+							<cells>
+								<Text></Text>
+								<Text text="{Kunnr}"/>
+								<Text text="{Name1}"/>
+								<Text text="{Ort01}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+      		</VBox>
+    	</content>
+	</Dialog>
+</core:FragmentDefinition>

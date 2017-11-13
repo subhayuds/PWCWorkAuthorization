@@ -1,0 +1,178 @@
+#DetailsView {
+	background-color: white;
+}
+
+#__page2-cont {
+	height : 99%;
+}
+
+/* Header content adjustment */
+.sapSuiteUiCommonsHeaderCell {
+	padding-tip : 0.3rem;
+}
+
+#idDetailsHeaderContainer-scroll-area {
+	height : 3.2rem;
+}
+
+#idDetailsHeaderToolBar {
+	height : 3rem !important;
+}
+
+#idDetailsHeaderContainer-scroll-area {
+	height : 4rem;
+}
+
+#idDetailsHeaderContainer-scrl-cntnr-scroll {
+	height : 100%;
+}
+
+#idVendorFilterSelect {
+	margin: -.2rem 0 0 0;
+}
+
+.headerIconStyle {
+	border-radius : 25px;
+}
+
+/* Header Comments Icon Start */
+#idMsgToolbar {
+	border : 0px;
+	height : auto;	
+}
+
+.msgCountHBox {
+	border-radius: 25px;
+    border: 2px solid RED;
+    background-color: RED;
+    width: 20px;
+    height: 20px;
+    margin-left: -15px !important;
+    margin-right: 0px !important;
+    margin-top: -15px;
+}
+
+#idMessageCount {
+	text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+}
+/* Header Comments Icon End */
+
+.sapMITBHead {
+	margin: 0px;
+}
+
+#idIconTabBar--header {
+	background-color : #E3E4E5 !important;
+}
+
+.sapMITBFilterDefault {
+	color : #E3E4E5 !important;
+}
+
+.sapMITBTextOnly .sapMITBFilterDefault>.sapMITBText {
+	color : #2A2727 !important;
+}
+
+.sapMITBTextOnly .sapMITBFilterDefault.sapMITBSelected>.sapMITBText {
+	color : #2A2727 !important;
+	font-weight : bold;
+}
+
+.sapMITBSelected>.sapMITBContentArrow {
+	border-bottom-color : #2A2727 !important;
+}
+
+#idIconTabBar-containerContent {
+	border : 0px !important;
+}
+
+.sapMPanelContent:not(.sapMPanelBGTransparent) {
+	border : 0px !important;
+}
+
+#idIconTabBar-content {
+	padding : 0px;
+}
+
+.panelTitle {
+	font-size : 16px !important;
+	font-weight : bold;
+}
+
+/*** Vendor Dialog Padding removal ***/
+#idVendorDialog-scrollCont {
+	padding-top : 0px;
+}
+
+/*** Vendor Dialog Padding removal ***/
+.sapMCrsl.sapUiContentPadding>.sapMCrslInner>.sapMCrslItem>.sapMScrollCont>.sapMScrollContScroll {
+    padding: 0rem;
+}
+
+/* Table Header Background Color */
+.sapMListTbl th {
+	background-color : #E3E4E5 !important;
+}
+
+/* Table cell including header */
+.sapMListTblCell {
+    padding: 0rem .5rem;
+    vertical-align: middle;
+}
+
+/* Align input box with search icon in table cell */
+.sapMInputBase {
+	padding : 0px !important;
+	height: 2rem;
+}
+
+/* Input field size */
+.sapMInputBaseInner {
+	height: 2rem;
+    padding: 0 0.3rem;
+}
+
+/* Table row selector column width */
+.sapMListTblSelCol {
+	width : 30px;
+}
+
+/* Labor Table Text Area inner padding */
+.sapMTextArea>.sapMTextAreaInner {
+    padding: 0.3rem;
+}
+
+.footerToolbar {
+	background-color : #E3E4E5 !important;
+	border : 0px !important;
+}
+
+#btnAddWS-inner, #btnRemoveWS-inner, #btnSave-inner, #btnApprove-inner, #btnReject-inner, #btnSubmitActuals-inner, #idFooterToolBar-overflowButton-inner  {
+   /*  background-color : #2A2727;
+    border-color : #2A2727;
+    color : #FFFFFF; */
+    border-radius : 5px;
+}
+.blabel {
+color: rgb(15, 15, 121);
+font-size: 0.875rem;
+font-family: Arial,Helvetica,sans-serif;
+font-weight: bold;
+display: inline-block;
+text-overflow: ellipsis;
+overflow: hidden;
+white-space: nowrap;
+cursor: text;
+}
+
+.verticalLine{
+      width: 1px; /* Line width */
+      background-color: black; /* Line color */
+      height: 100%; /* Override in-line if you want specific height. */
+}
+.sapUiSmallMarginBegin{
+	margin-top:40px;
+} 

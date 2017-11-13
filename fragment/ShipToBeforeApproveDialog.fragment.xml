@@ -1,0 +1,121 @@
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:l="sap.ui.commons.layout" xmlns:core="sap.ui.core" >
+	<Dialog title="Shipping Instructions" class="sapUiPopupWithPadding" type="Message"> <!-- class customDialogHeader removed -->
+		<content>
+			<HBox width = "700px">
+				<VBox width = "60%">
+					<HBox id = "primarydetails">
+						<!-- <VBox>
+							<HBox>
+								<Label text="Ship to:" />
+								<ToolbarSpacer width="{= ${/EndPoint} ? '76px' : '22px'}" />
+
+							</HBox>
+						</VBox>
+						<VBox>
+							<HBox>
+							<Text text="Care of: " wrapping = "true" design = "Bold"/>
+							<Text text="{/CareOf}" width = "250px" wrapping = "true" design = "Bold"/>
+							</HBox>
+							<Text text="{/Adressline1}" width = "300px" wrapping = "true" design = "Bold"/>
+							<Text text="{/Adressline2}" width = "300px" wrapping = "true" design = "Bold"/>
+							<Text text="{/Adressline3}" width = "300px" wrapping = "true" design = "Bold"/>
+							<HBox>
+							<Text text="{/City}" wrapping = "true" design = "Bold"/>
+							<Text text=" , " wrapping = "true" design = "Bold"/>
+							<Text text="{/RegDesc}" wrapping = "true" design = "Bold"/>
+							<Text text=" , " wrapping = "true" design = "Bold"/>
+							<Text text="{/PostCode}" wrapping = "true" design = "Bold"/>
+							</HBox>
+							<Text text="{/CountryName}" wrapping = "true" design = "Bold"/>
+						</VBox> -->
+					</HBox>
+					<Text text="  " wrapping = "true" design = "Bold"/>
+					<Text text="  " wrapping = "true" design = "Bold"/>
+					<HBox id = "endpointdetails">
+					</HBox>
+				</VBox>
+				<VBox width = "40%">
+					<HBox>
+						<VBox width="40%"><Label text="Carrier:" /></VBox>
+						<VBox width="60%"><Text text="{/Carrier}" wrapping = "true" class = "boldText"/></VBox>
+					</HBox>
+					<HBox>
+						<VBox width="40%"><Label text="Required by:"/></VBox>
+						<VBox width="60%"><Text text="{/DelvDate}" wrapping = "true" class = "boldText"/></VBox>
+					</HBox>
+					<HBox>
+						<VBox width="40%"><Label text="Ship Acc. No:" /></VBox>
+						<VBox width="60%"><Text text="{/ShipAccNo}" wrapping = "true" class = "boldText"/></VBox>
+					</HBox>
+					<HBox>
+						<VBox width="40%"><Label text="Customer PO:" /></VBox>
+						<VBox width="60%"><Text text="{/CustmerPo}" wrapping = "true" class = "boldText"/></VBox>
+					</HBox>
+					<HBox>
+						<VBox width="40%"><Label text="Notes:" /></VBox>
+						<VBox width="60%"><Text text="{/Note}" wrapping = "true" class = "boldText"/></VBox>
+					</HBox>
+				</VBox>
+			</HBox>
+			<!-- <VBox>
+				<HBox width="100%" class="sapUiTinyMarginTop">
+					<VBox width="40%"><Label text="Ship To:"/></VBox>
+					<VBox width="60%"><Text width = "100%" text="{/Name1}" wrapping = "true" /></VBox>
+				</HBox>
+				<HBox width="100%" class="sapUiTinyMarginTop">
+					<VBox width="40%"><Label text="Address Line 1:"/></VBox>
+					<VBox width="60%"><Text text="{/Adressline1}" wrapping = "true" /></VBox>
+				</HBox>
+				<HBox width="100%" class="sapUiTinyMarginTop">
+					<VBox width="40%"><Label text="Address Line 2:" /></VBox>
+					<VBox width="60%"><Text text="{/Adressline2}" wrapping = "true" /></VBox>
+				</HBox>
+				<HBox width="100%" class="sapUiTinyMarginTop">
+					<VBox width="40%"><Label text="Address Line 3:" /></VBox>
+					<VBox width="60%"><Text text="{/Adressline3}" wrapping = "true" /></VBox>
+				</HBox>
+				<HBox width="100%" class="sapUiTinyMarginTop">
+					<VBox width="40%"><Label text="City:"/></VBox>
+					<VBox width="60%"><Text text="{/City}" wrapping = "true" /></VBox>
+				</HBox>
+				<HBox width="100%" class="sapUiTinyMarginTop">
+					<VBox width="40%"><Label text="Region" /></VBox>
+					<VBox width="60%"><Text text="{/RegDesc}" wrapping = "true" /></VBox>
+				</HBox>
+				<HBox width="100%" class="sapUiTinyMarginTop">
+					<VBox width="40%"><Label text="Country" /></VBox>
+					<VBox width="60%"><Text text="{/CountryName}" wrapping = "true"  /></VBox>
+				</HBox>
+				<HBox class="sapUiTinyMarginTop">
+					<VBox width="40%"><Label text="Zip Code:" /></VBox>
+					<VBox width="60%"><Text text="{/PostCode}" wrapping = "true" /></VBox>
+				</HBox>
+				<HBox class="sapUiTinyMarginTop">
+					<VBox width="40%"><Label text="Care of:" /></VBox>
+					<VBox width="60%"><Text text="{/CareOf}" wrapping = "true" /></VBox>
+				</HBox>
+				<HBox width="100%" class="sapUiTinyMarginTop">
+					<VBox width="40%"><Label text="Ship Acc. No:" /></VBox>
+					<VBox width="60%"><Text text="{/ShipAccNo}" wrapping = "true" /></VBox>
+				</HBox>
+				<HBox width="100%" class="sapUiTinyMarginTop">
+					<VBox width="40%"><Label text="Carrier:" /></VBox>
+					<VBox width="60%"><Text text="{/Carrier}" wrapping = "true" /></VBox>
+				</HBox>
+				<HBox width="100%" class="sapUiTinyMarginTop">
+					<VBox width="40%"><Label text="Required by:"/></VBox>
+					<VBox width="60%"><Text text="{/DelvDate}" wrapping = "true" /></VBox>
+				</HBox>
+				<HBox width="100%" class="sapUiTinyMarginTop">
+					<VBox width="40%"><Label text="Customer PO:" /></VBox>
+					<VBox width="60%"><Text text="{/CustmerPo}" wrapping = "true" /></VBox>
+				</HBox>
+				<HBox width="100%" class="sapUiTinyMarginTop">
+					<VBox width="40%"><Label text="Address Type:" /></VBox>
+					<VBox width="60%"><Text text="{/PrimaryShip}" wrapping = "true" /></VBox>
+				</HBox>
+			</VBox>-->
+		</content>
+	</Dialog>
+</core:FragmentDefinition>

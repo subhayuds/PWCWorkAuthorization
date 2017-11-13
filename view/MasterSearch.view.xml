@@ -1,0 +1,93 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="pwc.app.controller.MasterSearch" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="" showHeader="false" showFooter="false">
+		<content>
+			<VBox id="srchMCol" width="100%" class="sapUiTinyMarginTop sapUiSmallMarginBegin sapUiSmallMarginEnd">
+				<HBox width="100%" class="sapUiTinyMarginBottom">
+					<HBox width="40%" class="sapUiTinyMarginEnd">
+						<Input id="idSearchWANo" width="100%" placeholder="WA No" submit="handleSearchResult" type="Text"/>
+					</HBox>
+					<HBox width="50%">
+						<Input id="idEngineSL" width="100%" placeholder="Engine S/N" submit="handleSearchResult" type="Text"/>
+					</HBox>
+				</HBox>
+				<HBox width="100%" class="sapUiTinyMarginBottom">
+					<HBox width="40%" class="sapUiTinyMarginEnd">
+						<Input id="idAcTNo" width="100%" placeholder="Aircraft Tail No" submit="handleSearchResult" type="Text"/>
+					</HBox>
+					<HBox width="50%">
+						<Input id="idAcSNo" width="100%" placeholder="Aircraft S/N" submit="handleSearchResult" type="Text"/>
+					</HBox>
+				</HBox>
+				<HBox width="100%" class="sapUiTinyMarginBottom">
+					<HBox width="40%" class="sapUiTinyMarginEnd">
+						<Input id="idContNo" width="100%" placeholder="Contract No" submit="handleSearchResult" type="Text"/>
+					</HBox>
+					<HBox width="50%">
+						<core:Icon id="idIconSearch" src="sap-icon://search" size="1.5rem" width="2rem" height="3rem" decorative="true" useIconTooltip="true" alt="Search" noTabStop="false" tooltip="Search" press="handleSearchResult"/>
+					</HBox>
+				</HBox>
+			</VBox>
+			
+			<List id="idSearchResultCustomList" mode="SingleSelectMaster" backgroundDesign="Solid" items="{path:'/results'}" selectionChange="handleListItemPress">
+				<CustomListItem id="idSearchResultCustomListItem">
+					<VBox width="100%" class="sapUiTinyMarginTop sapUiTinyMarginBottom sapUiSmallMarginBegin sapUiSmallMarginEnd">
+						<HBox width="100%">
+							<HBox width="100%">
+								<Label design="Bold" text="WA{Aufnr}"/>
+							</HBox>
+						</HBox>
+						<HBox width="100%">
+							<HBox width="45%">
+								<Label design="Standard" text="Contract Number"/>
+							</HBox>
+							<HBox width="45%">
+								<Text text="{CustomerPo}"/>
+							</HBox>
+						</HBox>
+						<HBox width="100%">
+							<HBox width="45%">
+								<Label design="Standard" text="Customer Name"/>
+							</HBox>
+							<HBox width="45%">
+								<Text text="{Name1}"/>
+							</HBox>
+						</HBox>
+						<HBox width="100%">
+							<HBox width="45%">
+								<Label design="Standard" text="Aircraft S/N"/>
+							</HBox>
+							<HBox width="45%">
+								<Text text="{Serialnr}"/>
+							</HBox>
+						</HBox>
+						<HBox width="100%">
+							<HBox width="45%">
+								<Label design="Standard" text="TTSN"/>
+							</HBox>
+							<HBox width="45%">
+								<core:Icon src="sap-icon://detail-view" size="1rem" tooltip="View TTSN List" press="handleTTSNPopoverPress"/>
+							</HBox>
+						</HBox>
+						<HBox width="100%">
+							<HBox width="45%">
+								<Label design="Standard" text="Date"/>
+							</HBox>
+							<HBox width="45%">
+								<!-- <Text text="{path: 'Erdat' , formatter: 'pwc.app.util.WAFormatter._convDate1'}"/> -->
+								<Text text="{Erdat}"/>
+							</HBox>
+						</HBox>
+						<HBox width="100%">
+							<HBox width="45%">
+								<Label design="Standard" text="Work Type"/>
+							</HBox>
+							<HBox width="45%">
+								<core:Icon src="sap-icon://detail-view" size="1rem" tooltip="View Work Type List" press="handleWorkTypePopoverPress"/>
+							</HBox>
+						</HBox>
+					</VBox>
+				</CustomListItem>
+			</List>
+		</content>
+	</Page>
+</core:View>

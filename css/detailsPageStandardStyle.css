@@ -1,0 +1,79 @@
+/* .sapMLabel {
+color: #666666;
+font-size: 0.675rem;
+font-family: Arial,Helvetica,sans-serif;
+font-weight: normal;
+display: inline-block;
+text-overflow: ellipsis;
+overflow: hidden;
+white-space: nowrap;
+cursor: text;
+} */
+
+ 
+
+.sapMListTblSelCol {
+    width: 1rem;
+} 
+
+
+.sapMITBContent
+{
+    padding-top: 0rem !important;
+    padding-right: 2rem !important;
+    padding-bottom: 0rem !important;
+    padding-left: 0rem !important;
+}
+
+.sapMPanelContent {
+    padding-top: 0rem !important;
+    padding-right: 1rem !important;
+    padding-bottom: 0rem !important;
+    padding-left: 1rem !important;
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+}
+
+
+.pwcHeaderMPanelContent {
+    padding-top: 1rem !important;
+}
+
+
+.pwcUiSmallMarginTop{
+       margin-top: 0rem!important; 
+       margin-left: 0rem!important;
+       padding-bottom: 1rem !important; 
+}
+
+
+.pwdTransparentInputBox{
+	background-color: transparent !important;
+}
+
+
+.pwcTextFieldFont{
+	font-size: 0.875rem !important;
+}
+
+.pwcMListTblSelCol 
+{ 
+	width: 3rem; 
+}
+
+.pwcShipToTexBoxLabel
+{
+	padding-top: 9px;
+}
+
+.pwcShipToDropDownLabel
+{
+	padding-top: 3px;
+}
+
+.pwcShipToDateLabel
+{
+	padding-top: 5px;
+}
+
+}

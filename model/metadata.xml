@@ -1,0 +1,163 @@
+<app:service xmlns:app="http://www.w3.org/2007/app"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+	xmlns:sap="http://www.sap.com/Protocols/SAPData" xml:lang="en"
+	xml:base="/sap/opu/odata/sap/Z_ESP_GW_SERVICE_SRV/">
+	<app:workspace>
+		<atom:title type="text">Data</atom:title>
+		<app:collection sap:creatable="false" sap:updatable="false"
+			sap:deletable="false" sap:pageable="false" sap:content-version="1"
+			href="ZZ_CSORDER_ENGSet">
+			<atom:title type="text">ZZ_CSORDER_ENGSet</atom:title>
+			<sap:member-title>ZZ_CSORDER_ENG</sap:member-title>
+		</app:collection>
+		<app:collection sap:creatable="false" sap:updatable="false"
+			sap:deletable="false" sap:pageable="false" sap:content-version="1"
+			href="ZZ_CSORDER_TXTSet">
+			<atom:title type="text">ZZ_CSORDER_TXTSet</atom:title>
+			<sap:member-title>ZZ_CSORDER_TXT</sap:member-title>
+		</app:collection>
+		<app:collection sap:creatable="false" sap:updatable="false"
+			sap:deletable="false" sap:pageable="false" sap:content-version="1"
+			href="ZZ_CSORDER_CONTACTSet">
+			<atom:title type="text">ZZ_CSORDER_CONTACTSet</atom:title>
+			<sap:member-title>ZZ_CSORDER_CONTACT</sap:member-title>
+		</app:collection>
+		<app:collection sap:creatable="false" sap:updatable="false"
+			sap:deletable="false" sap:pageable="false" sap:content-version="1"
+			href="Z_SHIPPING_INFOSet">
+			<atom:title type="text">Z_SHIPPING_INFOSet</atom:title>
+			<sap:member-title>Z_SHIPPING_INFO</sap:member-title>
+		</app:collection>
+		<app:collection sap:creatable="false" sap:updatable="false"
+			sap:deletable="false" sap:pageable="false" sap:content-version="1"
+			href="ZZ_PART_SEARCHSet">
+			<atom:title type="text">ZZ_PART_SEARCHSet</atom:title>
+			<sap:member-title>ZZ_PART_SEARCH</sap:member-title>
+		</app:collection>
+		<app:collection sap:creatable="false" sap:updatable="false"
+			sap:deletable="false" sap:pageable="false" sap:content-version="1"
+			href="Z_Detail_InfoSet">
+			<atom:title type="text">Z_Detail_InfoSet</atom:title>
+			<sap:member-title>Z_Detail_Info</sap:member-title>
+		</app:collection>
+		<app:collection sap:creatable="false" sap:updatable="false"
+			sap:deletable="false" sap:pageable="false" sap:content-version="1"
+			href="Z_vendor_searchSet">
+			<atom:title type="text">Z_vendor_searchSet</atom:title>
+			<sap:member-title>Z_vendor_search</sap:member-title>
+		</app:collection>
+		<app:collection sap:creatable="false" sap:updatable="false"
+			sap:deletable="false" sap:pageable="false" sap:content-version="1"
+			href="ZZ_CSORDER_HDRSet">
+			<atom:title type="text">ZZ_CSORDER_HDRSet</atom:title>
+			<sap:member-title>ZZ_CSORDER_HDR</sap:member-title>
+		</app:collection>
+		<app:collection sap:creatable="false" sap:updatable="false"
+			sap:deletable="false" sap:pageable="false" sap:content-version="1"
+			href="ZZ_CSORDER_OPRNSet">
+			<atom:title type="text">ZZ_CSORDER_OPRNSet</atom:title>
+			<sap:member-title>ZZ_CSORDER_OPRN</sap:member-title>
+		</app:collection>
+		<app:collection sap:creatable="false" sap:updatable="false"
+			sap:deletable="false" sap:pageable="false" sap:content-version="1"
+			href="ZZ_CSORDER_COMPSet">
+			<atom:title type="text">ZZ_CSORDER_COMPSet</atom:title>
+			<sap:member-title>ZZ_CSORDER_COMP</sap:member-title>
+		</app:collection>
+		<app:collection sap:creatable="false" sap:updatable="false"
+			sap:deletable="false" sap:pageable="false" sap:content-version="1"
+			href="Z_SEARCHSet">
+			<atom:title type="text">Z_SEARCHSet</atom:title>
+			<sap:member-title>Z_SEARCH</sap:member-title>
+		</app:collection>
+		<app:collection sap:creatable="false" sap:updatable="false"
+			sap:deletable="false" sap:pageable="false" sap:content-version="1"
+			href="ZZ_CSORDER_WORKSet">
+			<atom:title type="text">ZZ_CSORDER_WORKSet</atom:title>
+			<sap:member-title>ZZ_CSORDER_WORK</sap:member-title>
+		</app:collection>
+		<!-- <app:collection sap:creatable="false" sap:updatable="false"
+			sap:deletable="false" sap:pageable="false" sap:content-version="1"
+			href="ZZ_ENGINESSet">
+			<atom:title type="text">ZZ_ENGINESSet</atom:title>
+			<sap:member-title>ZZ_ENGINES</sap:member-title>
+		</app:collection> -->
+		<app:collection sap:creatable="false" sap:updatable="false"
+			sap:deletable="false" sap:pageable="false" sap:content-version="1"
+			href="ZZ_WORKTYPE_LISTSet">
+			<atom:title type="text">ZZ_WORKTYPE_LISTSet</atom:title>
+			<sap:member-title>ZZ_WORKTYPE_LIST</sap:member-title>
+		</app:collection>
+		<app:collection sap:creatable="false" sap:updatable="false"
+			sap:deletable="false" sap:pageable="false" sap:content-version="1"
+			href="ZZ_WORKSCOPE_LISTSet">
+			<atom:title type="text">ZZ_WORKSCOPE_LISTSet</atom:title>
+			<sap:member-title>ZZ_WORKSCOPE_LIST</sap:member-title>
+		</app:collection>
+		<app:collection sap:creatable="false" sap:updatable="false"
+			sap:deletable="false" sap:pageable="false" sap:content-version="1"
+			href="ZZ_ORD_HDR_USet">
+			<atom:title type="text">ZZ_ORD_HDR_USet</atom:title>
+			<sap:member-title>ZZ_ORD_HDR_U</sap:member-title>
+		</app:collection>
+		<app:collection sap:creatable="false" sap:updatable="false"
+			sap:deletable="false" sap:pageable="false" sap:content-version="1"
+			href="ZZ_ORD_ITM_USet">
+			<atom:title type="text">ZZ_ORD_ITM_USet</atom:title>
+			<sap:member-title>ZZ_ORD_ITM_U</sap:member-title>
+		</app:collection>
+		<app:collection sap:creatable="false" sap:updatable="false"
+			sap:deletable="false" sap:pageable="false" sap:content-version="1"
+			href="ZZ_WORK_SCOPESet">
+			<atom:title type="text">ZZ_WORK_SCOPESet</atom:title>
+			<sap:member-title>ZZ_WORK_SCOPE</sap:member-title>
+		</app:collection>
+		<app:collection sap:creatable="false" sap:updatable="false"
+			sap:deletable="false" sap:pageable="false" sap:content-version="1"
+			href="ZZ_WORK_SCOPE_OPERNSet">
+			<atom:title type="text">ZZ_WORK_SCOPE_OPERNSet</atom:title>
+			<sap:member-title>ZZ_WORK_SCOPE_OPERN</sap:member-title>
+		</app:collection>
+		<app:collection sap:creatable="false" sap:updatable="false"
+			sap:deletable="false" sap:pageable="false" sap:content-version="1"
+			href="ZZ_WORK_SCOPE_COMPSet">
+			<atom:title type="text">ZZ_WORK_SCOPE_COMPSet</atom:title>
+			<sap:member-title>ZZ_WORK_SCOPE_COMP</sap:member-title>
+		</app:collection>
+		<app:collection sap:creatable="false" sap:updatable="false"
+			sap:deletable="false" sap:pageable="false" sap:content-version="1"
+			href="ZZ_SEARCH_SRVPRVDSet">
+			<atom:title type="text">ZZ_SEARCH_SRVPRVDSet</atom:title>
+			<sap:member-title>ZZ_SEARCH_SRVPRVD</sap:member-title>
+		</app:collection>
+		<app:collection sap:creatable="false" sap:updatable="false"
+			sap:deletable="false" sap:pageable="false" sap:content-version="1"
+			href="ZZ_ESP_CONTACT_DISPLAYSet">
+			<atom:title type="text">ZZ_ESP_CONTACT_DISPLAYSet</atom:title>
+			<sap:member-title>ZZ_ESP_CONTACT_DISPLAY</sap:member-title>
+		</app:collection>
+		<app:collection sap:creatable="false" sap:updatable="false"
+			sap:deletable="false" sap:pageable="false" sap:content-version="1"
+			href="ZZ_ESP_CONTACT_UPDSet">
+			<atom:title type="text">ZZ_ESP_CONTACT_UPDSet</atom:title>
+			<sap:member-title>ZZ_ESP_CONTACT_UPD</sap:member-title>
+		</app:collection>
+		<app:collection sap:creatable="false" sap:updatable="false"
+			sap:deletable="false" sap:pageable="false" sap:content-version="1"
+			href="ZZ_COMMENT_TEXTSet">
+			<atom:title type="text">ZZ_COMMENT_TEXTSet</atom:title>
+			<sap:member-title>ZZ_COMMENT_TEXT</sap:member-title>
+		</app:collection>
+		<app:collection sap:creatable="false" sap:updatable="false"
+			sap:deletable="false" sap:pageable="false" sap:content-version="1"
+			href="ZZ_WORK_SCOPE_TEXTSet">
+			<atom:title type="text">ZZ_WORK_SCOPE_TEXTSet</atom:title>
+			<sap:member-title>ZZ_WORK_SCOPE_TEXT</sap:member-title>
+		</app:collection>
+	</app:workspace>
+	<atom:link rel="self"
+		href="/sap/opu/odata/sap/Z_ESP_GW_SERVICE_SRV/" />
+	<atom:link rel="latest-version"
+		href="/sap/opu/odata/sap/Z_ESP_GW_SERVICE_SRV/" />
+</app:service>

@@ -1,0 +1,105 @@
+.sapUiMedia-Std-Desktop .barHeader {
+	background-color : #2A2727 !important;
+	height : 7.5% !important;  
+}
+
+.sapUiMedia-Std-Tablet .barHeader {
+	background-color : #2A2727 !important;
+	height : 9.5% !important;
+}
+
+.sapUiMedia-Std-Phone .barHeader {
+	background-color : #2A2727 !important;
+	height : 9.5% !important;
+}
+
+.headerLabelMiddle {
+	font-size : 30px !important;
+	font-weight : bold !important;
+}
+
+.sapUiMedia-Std-Desktop .customSplitApp {
+	height : 84.7% !important;
+}
+
+.sapUiMedia-Std-Tablet .customSplitApp {
+	height : 82.7% !important;
+}
+
+.sapUiMedia-Std-Phone .customSplitApp {
+	height : 82.7% !important;
+}
+
+.barFooter {
+	background-color : #2A2727 !important;
+	height : 7.5% !important;
+}
+
+.sapMPageHeader::before {
+	border-top : 0px !important;
+}
+
+.sapMPageHeader {
+	border-bottom : 0px !important;
+}
+
+.boldFont {
+	font-weight : bold;
+}
+
+
+.sapMSplitContainerMasterBtnHidden {
+	    display: inline;
+}
+
+
+.boldText{
+	font-weight: bold !important;
+}
+
+
+.sapUiCalWeekNum { display : none }
+
+
+td {
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+}
+
+.setMaxWidth {max-width: none !important;}
+
+.pwcSearchIconMargin{
+	margin-top: 7px !important;
+    margin-left: 2px !important;
+}
+
+.pwcSearchReportApproved{
+	background-color : lawngreen;
+}
+.pwcSearchReportDraft{
+	background-color : orange;
+}
+.pwcSearchReportDeclined{
+	background-color : red;
+}
+.pwcSearchReportRevisions{
+	background-color : lightskyblue;
+}
+
+.idCriteria{
+	margin-right:10px !important;
+}
+
+.idCriteriaLeft{
+	margin-left:15px !important;
+	
+}
+
+.idRight{
+		margin-right:10px !important;
+	
+}
+
+.lblDate{
+	margin-top:15px !important;
+}

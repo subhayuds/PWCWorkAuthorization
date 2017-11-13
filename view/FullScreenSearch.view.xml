@@ -1,0 +1,321 @@
+<core:View xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:c="sap.ui.core"
+	xmlns:tab="sap.ui.table" controllerName="pwc.app.controller.FullScreenSearch"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Search Work Authorizations">
+		<headerContent>
+			<core:Icon id="forwardButton1" src="sap-icon://arrow-right"
+				size="2rem" decorative="true" useIconTooltip="true" alt="Back"
+				noTabStop="false" tooltip="Go back to Search screen" press="handleForwardDetailPress"
+				visible="false" />
+		</headerContent>
+
+		<Panel expandable="true" expanded="false" width="auto">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Report" />
+				</Toolbar>
+			</headerToolbar>
+			<content>
+				<!-- <HBox width="100%" > <HBox width="4%"><Label text="From:" class="sapUiSmallMarginTop 
+					sapUiTinyMarginBegin pwcShipToDateLabel"/></HBox> <HBox width="18%"> <DatePicker 
+					valueFormat = "dd-MM-yyyy" displayFormat = "dd-MMM-yyyy" class="sapUiTinyMarginTop" 
+					/> </HBox> <HBox width="3%"><Label text="To:" class="sapUiSmallMarginTop 
+					sapUiTinyMarginBegin pwcShipToDateLabel"/></HBox> <HBox width="18%"> <DatePicker 
+					valueFormat = "dd-MM-yyyy" displayFormat = "dd-MMM-yyyy" class="sapUiTinyMarginTop" 
+					/> </HBox> <HBox width="20%"> <Button text="Get Report" icon="sap-icon://search" 
+					type="Default" width="100%" /> </HBox> </HBox> -->
+
+				<HBox width="100%">
+					<HBox width="4%">
+						<Label class="lblDate" text="From:" />
+					</HBox>
+					<HBox width="18%">
+						<DatePicker id="fromDate"  valueFormat="dd-MM-yyyy" displayFormat="dd-MMM-yyyy" />
+					</HBox>
+					
+					<HBox width="3%">
+						<Label class="lblDate" text="To:" />
+					</HBox>
+					<HBox width="16%">
+						<DatePicker id="toDate" valueFormat="dd-MM-yyyy" displayFormat="dd-MMM-yyyy" />
+					</HBox>
+					<HBox width="15px"></HBox>
+					<HBox width="20%">
+						<Button text="Get Report" icon="sap-icon://search" type="Default" press="onReportResult"
+							width="100%" />
+					</HBox>
+				</HBox>
+
+				<l:Grid id="idReport" defaultSpan="L3 M4 S6" class="sapUiSmallMarginTop">
+					<l:content>
+						<StandardListItem id="idApproved"  class="pwcSearchReportApproved"
+							description="Approved" />
+						<StandardListItem id="idDraft"  class="pwcSearchReportDraft"
+							description="Draft" />
+						<StandardListItem id="idDeclined" class="pwcSearchReportDeclined"
+							description="Declined" />
+						<StandardListItem id="idRev"
+							class="pwcSearchReportRevisions" description="Revisions" /> 
+							
+					</l:content>
+				</l:Grid>
+			</content>
+		</Panel>
+
+
+
+		<Panel expandable="true" expanded="true" width="auto">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Search" />
+					<ToolbarSpacer />
+			 <Button icon="sap-icon://download" press="exportToExcel"/>
+				<Button id="forwardButton" icon="sap-icon://arrow-right"
+						size="2rem" decorative="true" useIconTooltip="true" alt="Back"
+						noTabStop="false" tooltip="Go back to Search screen" press="handleForwardDetailPress"
+						visible="false" />
+				</Toolbar>
+			</headerToolbar>
+			<content>
+				<HBox>
+					<HBox>
+						<Select class="idCriteria" id="idCriteria1"  
+							change="onSelectCriteria1" >
+							<items>
+								<core:Item key="none" text="Filter1" />
+								<core:Item key="WANO" text="WA No" />
+<!-- 								<core:Item key="CREATE_DT" text="Created date" /> -->
+								<core:Item key="CONTRACT_NM" text="Contract number" />
+								<core:Item key="WORK_TY" text="Worktype" />
+								<core:Item key="ENG_SL" text="Engine S/N" />
+								<core:Item key="WA_STATUS" text="WA Status" />
+								<core:Item key="CRT_BY" text="Created by" />
+								<core:Item key="CRM_NO" text="CRM No" />
+								<core:Item key="CUST_NAME" text="Customer Name" />
+								<core:Item key="AIRCRT_TAILNO" text="Aircraft Tail No" />
+								<core:Item key="AIRCRT_SL" text="Aircraft S/N" />
+								<core:Item key="PLAN_TY" text="Plan Type" />
+								<core:Item key="ENG_MODEL" text="Engine Model" />
+								<core:Item key="SERVICE_PR" text="Service Provider" />
+								<core:Item key="PART_NO" text="Part Number" />
+								<core:Item key="TASK_TITL" text="Tasklist Title" />
+								<core:Item key="REASN_WRK" text="Reason for Work" />
+							</items>
+						</Select>
+						<Input id="filter1" placeholder="Enter Value" width="150px" submit="handleSearchResult"
+							type="Text" />
+<!-- 							<HBox id="date1" visible="false" width="150px">
+								<DatePicker width="140px" id="datePicker1" valueFormat="dd-MM-yyyy" displayFormat="dd-MMM-yyyy" />
+							</HBox> -->
+					</HBox>
+										<HBox width="10px" />
+					
+					<HBox>
+						<Select id="idCriteria2" class="idCriteria idCriteriaLeft"
+							change="onSelectCriteria2">
+							<items>
+								<core:Item key="none" text="Filter2" />
+								<core:Item key="WANO" text="WA No" />
+		<!-- 				    <core:Item key="CREATE_DT" text="Created date" /> -->
+								<core:Item key="CONTRACT_NM" text="Contract number" />
+								<core:Item key="WORK_TY" text="Worktype" />
+								<core:Item key="ENG_SL" text="Engine S/N" />
+								<core:Item key="WA_STATUS" text="WA Status" />
+								<core:Item key="CRT_BY" text="Created by" />
+								<core:Item key="CRM_NO" text="CRM No" />
+								<core:Item key="CUST_NAME" text="Customer Name" />
+								<core:Item key="AIRCRT_TAILNO" text="Aircraft Tail No" />
+								<core:Item key="AIRCRT_SL" text="Aircraft S/N" />
+								<core:Item key="PLAN_TY" text="Plan Type" />
+								<core:Item key="ENG_MODEL" text="Engine Model" />
+								<core:Item key="SERVICE_PR" text="Service Provider" />
+								<core:Item key="PART_NO" text="Part Number" />
+								<core:Item key="TASK_TITL" text="Tasklist Title" />
+								<core:Item key="REASN_WRK" text="Reason for Work" />
+							</items>
+						</Select>
+						<Input id="filter2" placeholder="Enter Value" width="150px" submit="handleSearchResult"
+							type="Text" />
+							<!-- <HBox id="date2" visible="false" width="18%">
+								<DatePicker width="140px" id="datePicker2" valueFormat="dd-MM-yyyy" displayFormat="dd-MMM-yyyy" />
+							</HBox> -->
+					</HBox>
+													<HBox width="10px" />
+					
+					<HBox >
+						<Select id="idCriteria3" class="idCriteria idCriteriaLeft"
+							change="onSelectCriteria3" autoAdjustWidth="false">
+							<items>
+								<core:Item key="none" text="Filter3" />
+								<core:Item key="WANO" text="WA No" />
+<!-- 								<core:Item key="CREATE_DT" text="Created date" /> -->
+								<core:Item key="CONTRACT_NM" text="Contract number" />
+								<core:Item key="WORK_TY" text="Worktype" />
+								<core:Item key="ENG_SL" text="Engine S/N" />
+								<core:Item key="WA_STATUS" text="WA Status" />
+								<core:Item key="CRT_BY" text="Created by" />
+								<core:Item key="CRM_NO" text="CRM No" />
+								<core:Item key="CUST_NAME" text="Customer Name" />
+								<core:Item key="AIRCRT_TAILNO" text="Aircraft Tail No" />
+								<core:Item key="AIRCRT_SL" text="Aircraft S/N" />
+								<core:Item key="PLAN_TY" text="Plan Type" />
+								<core:Item key="ENG_MODEL" text="Engine Model" />
+								<core:Item key="SERVICE_PR" text="Service Provider" />
+								<core:Item key="PART_NO" text="Part Number" />
+								<core:Item key="TASK_TITL" text="Tasklist Title" />
+								<core:Item key="REASN_WRK" text="Reason for Work" />
+							</items>
+						</Select>
+						<Input id="filter3" placeholder="Enter Value" width="150px"  submit="handleSearchResult" type="Text" />
+							<!-- <HBox id="date3" visible="false" width="18%">
+								<DatePicker width="140px" id="datePicker3" valueFormat="dd-MM-yyyy" displayFormat="dd-MMM-yyyy" />
+							</HBox> -->
+					</HBox>
+					
+				</HBox>
+				
+				<HBox width="100%">
+					<HBox width="4%">
+						<Label class="lblDate" text="From:" />
+					</HBox>
+					<HBox>
+						<DatePicker id="fromDateSearch" width="272px" valueFormat="dd-MM-yyyy" displayFormat="dd-MMM-yyyy" />
+					</HBox>
+					<HBox width="8px"></HBox>
+					<HBox width="26px">
+						<Label class="lblDate" text="To:" />
+					</HBox>
+					<HBox>
+						<DatePicker id="toDateSearch" width="329px" valueFormat="dd-MM-yyyy" displayFormat="dd-MMM-yyyy" />
+					</HBox>
+					<HBox width="22px" />
+					
+					<HBox width="10%">
+						<Button id="btnAddWS" text="Search" icon="sap-icon://search"
+							type="Default" width="100%" press="handleSearchResult" />
+				    </HBox>
+				    <HBox>
+						<Button id="btnReset" text="Reset" icon="sap-icon://reset"
+							type="Default" width="96.36px" press="handleReset" />
+					</HBox>
+				    
+				</HBox>
+				
+				<tab:Table id="idSearchResultTable" rows="{/results}" 
+					title="Work Authorizations" selectionMode="Single"
+					rowSelectionChange="handleListItemPress" selectionBehavior="RowOnly" noData="No data found for given Search Criteria">
+					<tab:columns>
+						<tab:Column width="140px"  resizable="true" autoResizable="true"> <!-- sortProperty = "Aufnr" -->
+							<Label text="WA Number" />
+							<tab:template>
+								<Text text="WA{Aufnr}" />
+							</tab:template>
+						</tab:Column>
+						<tab:Column width="140px" resizable="true">
+							<Label text="Created Date" />
+							<tab:template>
+								<Text text="{Erdat}" />
+							</tab:template>
+						</tab:Column>
+						<tab:Column width="140px" resizable="true">
+							<Label text="Contract Number" />
+							<tab:template>
+								<Text text="{CustomerPo}" />
+							</tab:template>
+						</tab:Column>
+						<tab:Column width="140px" resizable="true">
+							<Label text="Engine S/N (TTSN)" />
+							<tab:template>
+								<Text wrapping="false" text="{Readg}" tooltip="{Readg}" />
+							</tab:template>
+						</tab:Column>
+						<tab:Column width="160px" resizable="true">
+							<Label text="Work Type" />
+							<tab:template>
+								<Text wrapping="false" text="{WorkType}" tooltip="{WorkType}" />
+							</tab:template>
+						</tab:Column>
+						<tab:Column width="140px" resizable="true">
+							<Label text="WA Status" />
+							<tab:template>
+								<Text text="{Status}" />
+							</tab:template>
+						</tab:Column>
+						<tab:Column width="140px" resizable="true">
+							<Label text="Created By" />
+							<tab:template>
+								<Text text="{Created By}" />
+							</tab:template>
+						</tab:Column>
+
+						<tab:Column width="150px" resizable="true">
+							<Label text="CRM Case Number" />
+							<tab:template>
+								<Text text="{ZespOpid}" />
+							</tab:template>
+						</tab:Column>
+
+
+
+						<tab:Column width="140px" resizable="true">
+							<Label text="Customer Name" />
+							<tab:template>
+								<Text text="{Name1}" />
+							</tab:template>
+						</tab:Column>
+
+						<tab:Column width="140px" resizable="true">
+							<Label text="Aircraft Tail No" />
+							<tab:template>
+								<Text text="{ZespTailn}" />
+							</tab:template>
+						</tab:Column>
+						<tab:Column width="140px" resizable="true">
+							<Label text="Aircraft S/N" />
+							<tab:template>
+								<Text text="{ZESP_SERNO}" />
+							</tab:template>
+						</tab:Column>
+
+						<tab:Column width="140px" resizable="true">
+							<Label text="Rev" />
+							<tab:template>
+								<Text text="{ZESP_REVSN}" />
+							</tab:template>
+						</tab:Column>
+
+					</tab:columns>
+				</tab:Table>
+			</content>
+		</Panel>
+
+
+		<!-- <content> <HBox width="100%"> <HBox width="15%"> <Input id="idSearchWANo" 
+			width="100%" placeholder="WA No" submit="handleSearchResult" type="Text"/> 
+			</HBox> <HBox width="15%"> <Input id="idEngineSL" width="100%" placeholder="Engine 
+			S/N" submit="handleSearchResult" type="Text"/> </HBox> <HBox width="15%"> 
+			<Input id="idAcTNo" width="100%" placeholder="Aircraft Tail No" submit="handleSearchResult" 
+			type="Text"/> </HBox> <HBox width="15%"> <Input id="idAcSNo" width="100%" 
+			placeholder="Aircraft S/N" submit="handleSearchResult" type="Text"/> </HBox> 
+			<HBox width="15%"> <Input id="idContNo" width="100%" placeholder="Contract 
+			No" submit="handleSearchResult" type="Text"/> </HBox> <HBox width="15%"> 
+			<Button id="btnAddWS" text="Search" icon="sap-icon://search" type="Default" 
+			width="100%" press="handleSearchResult"/> </HBox> </HBox> <tab:Table id="idSearchResultTable" 
+			width = "100%" rows="{/results}" title="Work Authorizations" selectionMode="Single" 
+			rowSelectionChange="handleListItemPress" selectionBehavior = "RowOnly"> <tab:columns> 
+			<tab:Column width="20%" resizable="false" > sortProperty = "Aufnr" <Label 
+			text="WA Number"/> <tab:template> <Text text="WA{Aufnr}"/> </tab:template> 
+			</tab:Column> <tab:Column width="15%" resizable="false"> <Label text="Contact 
+			Number"/> <tab:template> <Text text="{CustomerPo}"/> </tab:template> </tab:Column> 
+			<tab:Column width="15%" resizable="false"> <Label text="Customer Name"/> 
+			<tab:template> <Text text="{Name1}"/> </tab:template> </tab:Column> <tab:Column 
+			width="15%" resizable="false"> <Label text="Aircraft S/N"/> <tab:template> 
+			<Text text="{Serialnr}"/> </tab:template> </tab:Column> <tab:Column width="10%" 
+			resizable="false"> <Label text="TTSN" /> <tab:template> <Text text=""/> </tab:template> 
+			</tab:Column> <tab:Column width="15%" resizable="false"> <Label text="Date" 
+			/> <tab:template> <Text text="{Erdat}"/> </tab:template> </tab:Column> <tab:Column 
+			width="10%" resizable="false"> <Label text="Work Type"/> <tab:template> <Text 
+			text=""/> </tab:template> </tab:Column> </tab:columns> </tab:Table> </content> -->
+	</Page>
+</core:View>
